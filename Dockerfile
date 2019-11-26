@@ -36,7 +36,7 @@ RUN sudo wget  https://downloads.rclone.org/v1.50.0/rclone-v1.50.0-linux-amd64.d
 RUN sudo dpkg -i rclone-v1.50.0-linux-amd64.deb ; sudo apt-get install -y -f 
 RUN sudo rm -fR /var/cache/apt/archives/*
 ENV PATH="/home/ubuntu/.pyenv/bin:/usr/bin:/usr/sbin:/bin:/sbin:/usr/local/bin:/home/ubuntu/workspace/bin"
-RUN cd /home/ubuntu/.c9 && git clone https://github.com/breatheco-de/c9-plugin && cd c9-plugin && bash ./install 
+RUN cd /home/ubuntu/ && git clone https://github.com/breatheco-de/c9-plugin && cd c9-plugin && bash ./install 
 EXPOSE 5050 8080 8081 8082
 #ENTRYPOINT ["node", "server.js", \
 #            "-w", "/workspace", \
