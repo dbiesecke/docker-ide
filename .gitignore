@@ -1,4 +1,5 @@
 # Logs
+workspace/*
 logs
 *.log
 npm-debug.log*

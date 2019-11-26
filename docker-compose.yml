@@ -1,0 +1,28 @@
+services:
+  cloud9:
+#    image: cs50/ide
+    build: . 
+    container_name: cloud9
+    environment:
+    - PGID=1000
+    - PUID=1000
+    - TZ=${TZ}
+#    - PORT=80
+#    - IP=178.254.3.20
+    - USERNAME=bob
+    - PASSWORD=hacks
+    - WORKSPACE=/home/ubuntu/workspace
+    - HOME=/home/ubuntu
+    volumes:
+      - /opt/www:/home/ubuntu/workspace/www:rw
+      - ${DOCKERCONFDIR}/plugins/:/home/ubuntu/.c9/plugins/:rw
+      - ${DOCKERCONFDIR}/init.js:/home/ubuntu/.c9/init.js:rw
+      - ${DOCKERCONFDIR}/init.js:/.c9/init.js:rw
+      - ${DOCKERSHAREDDIR}/:/home/ubuntu/workspace/.c9:rw
+#      - /opt/www:/workspace/www:rw
+      - /home/main:/home/ubuntu/workspace/user-main:rw
+    ports:
+      - 127.0.0.1:8181:5050
+      - 0.0.0.0:8080:8080
+    command:  --auth bob:hacks -p 80 -l c9.btc-mining.at
+version: "3.4"
