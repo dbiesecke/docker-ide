@@ -1,0 +1,6 @@
+[submodule "c9/plugins/c9.ide.preview.markdown"]
+	path = c9/plugins/c9.ide.preview.markdown
+	url = https://github.com/c9/c9.ide.preview.markdown.git
+[submodule "c9/plugins/c9.ide.recentfiles"]
+	path = c9/plugins/c9.ide.recentfiles
+	url = https://github.com/c9/c9.ide.recentfiles.git
