@@ -1,5 +1,5 @@
 #FROM sapk/cloud9:golang-alpine
-FROM cs50/cli:latest
+FROM cs50/ide:latest
 LABEL maintainer="Antoine GIRARD <antoine.girard@sapk.fr>"
 
 RUN sudo rm /etc/apt/sources.list.d/* && sudo apt-get update
