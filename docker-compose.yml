@@ -2,6 +2,12 @@ services:
   cloud9:
 #    image: cs50/ide
     build: . 
+    privileged: true
+    restart: unless-stopped
+    devices:
+    - /dev/fuse
+    cap_add:
+    - ALL
     container_name: cloud9
     environment:
     - PGID=1000
